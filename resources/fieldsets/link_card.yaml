@@ -1,0 +1,141 @@
+title: Link-Kasten
+fields:
+  -
+    handle: title
+    field:
+      antlers: false
+      type: textarea
+      display: Titel
+      icon: textarea
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      hide_display: false
+  -
+    import: width_in_layout
+  -
+    handle: card_type
+    field:
+      options:
+        link: Link
+        text: Text
+      taggable: false
+      push_tags: false
+      multiple: false
+      clearable: false
+      searchable: true
+      cast_booleans: false
+      type: select
+      display: Kasten-Typ
+      icon: select
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      hide_display: false
+      default: link
+      width: 50
+  -
+    handle: link_section
+    field:
+      type: section
+      display: Link
+      icon: section
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      hide_display: false
+      if:
+        card_type: 'equals link'
+  -
+    handle: link_type
+    field: link.link_type
+    config:
+      if:
+        card_type: 'equals link'
+      width: 50
+  -
+    handle: linked_page
+    field: link.linked_page
+    config:
+      if:
+        link_type: 'equals page'
+        card_type: 'equals link'
+      width: 50
+  -
+    handle: linked_product
+    field: link.linked_product
+    config:
+      if:
+        link_type: 'equals product'
+        card_type: 'equals link'
+      width: 50
+  -
+    handle: medium_section
+    field:
+      type: section
+      display: 'Medium (Bild/Video)'
+      icon: section
+      instructions: 'Wenn als Link-Typ "Modell" ausgewählt ist, wird automatisch ein passendes Medium des Modells genommen, wenn dieses Feld leer bleibt.'
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      hide_display: false
+      if:
+        card_type: 'equals link'
+  -
+    handle: medium_file
+    field: medium.medium_file
+    config:
+      if:
+        medium_type: 'equals file'
+        card_type: 'equals link'
+  -
+    handle: text_section
+    field:
+      type: section
+      display: Text
+      icon: section
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      hide_display: false
+      if:
+        card_type: 'equals text'
+  -
+    handle: text
+    field:
+      display_mode: short
+      sets:
+        neue_set-gruppe:
+          display: 'Neue Set-Gruppe'
+          instructions: null
+          icon: null
+          sets:
+            neues_set:
+              display: 'Neues Set'
+              instructions: null
+              icon: null
+              fields:
+                -
+                  import: main_editor
+      type: translatable
+      display: Text
+      icon: translatable
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      hide_display: false
+      if:
+        card_type: 'equals text'
+  -
+    handle: bg_color
+    field:
+      type: shop_color
+      display: Hintergrundfarbe
+      icon: shop_color
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      hide_display: false
+      if:
+        card_type: 'equals text'

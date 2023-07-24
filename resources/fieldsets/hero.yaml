@@ -1,0 +1,248 @@
+title: Hero
+fields:
+  -
+    handle: hero_type
+    field:
+      options:
+        slideshow: Bild/Slideshow
+        video: Video
+        small_random: 'Klein mit Zufallsbild und Seitentitel'
+      taggable: false
+      push_tags: false
+      multiple: false
+      clearable: false
+      searchable: true
+      cast_booleans: false
+      type: select
+      display: Hero-Typ
+      icon: select
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      hide_display: false
+      default: slideshow
+  -
+    handle: hero_video_phone
+    field:
+      max_files: 1
+      mode: list
+      container: assets
+      restrict: false
+      allow_uploads: true
+      show_filename: true
+      show_set_alt: true
+      type: assets
+      display: 'Video (Phone)'
+      icon: assets
+      width: 50
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      hide_display: false
+      validate:
+        - 'mimes:mp4,webm'
+      if:
+        hero_type: 'equals video'
+      always_save: true
+  -
+    handle: hero_fallback_video_phone
+    field:
+      max_files: 1
+      mode: list
+      container: assets
+      restrict: false
+      allow_uploads: true
+      show_filename: true
+      show_set_alt: true
+      type: assets
+      display: 'Fallback-Video (Phone)'
+      icon: assets
+      instructions: 'Für den Fall, das als Hauptvideo WEBM verwendet wurde, bietet sich an, ein MP4 als Fallback auszuwählen.'
+      width: 50
+      listable: hidden
+      instructions_position: below
+      visibility: visible
+      hide_display: false
+      if:
+        hero_type: 'equals video'
+      always_save: true
+  -
+    handle: hero_video_desktop
+    field:
+      max_files: 1
+      mode: list
+      container: assets
+      restrict: false
+      allow_uploads: true
+      show_filename: true
+      show_set_alt: true
+      type: assets
+      display: 'Video (Desktop)'
+      icon: assets
+      width: 50
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      hide_display: false
+      validate:
+        - 'mimes:mp4,webm'
+      if:
+        hero_type: 'equals video'
+      always_save: true
+  -
+    handle: hero_fallback_video_desktop
+    field:
+      max_files: 1
+      mode: list
+      container: assets
+      restrict: false
+      allow_uploads: true
+      show_filename: true
+      show_set_alt: true
+      type: assets
+      display: 'Fallback-Video (Desktop)'
+      icon: assets
+      instructions: 'Für den Fall, das als Hauptvideo WEBM verwendet wurde, bietet sich an, ein MP4 als Fallback auszuwählen.'
+      width: 50
+      listable: hidden
+      instructions_position: below
+      visibility: visible
+      hide_display: false
+      if:
+        hero_type: 'equals video'
+      always_save: true
+  -
+    handle: hero_slideshow
+    field:
+      collapse: true
+      previews: true
+      fullscreen: true
+      sets:
+        neue_set-gruppe:
+          display: 'Neue Set-Gruppe'
+          instructions: null
+          icon: null
+          sets:
+            slide:
+              display: Slide
+              instructions: null
+              icon: media-image-picture-orientation
+              fields:
+                -
+                  handle: image_phone
+                  field:
+                    max_files: 1
+                    mode: list
+                    container: assets
+                    restrict: false
+                    allow_uploads: true
+                    show_filename: true
+                    show_set_alt: true
+                    type: assets
+                    display: 'Bild (Phone)'
+                    icon: assets
+                    width: 50
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    hide_display: false
+                    validate:
+                      - 'mimes:jpg,jpeg,webp,png,gif'
+                    instructions: 'Wenn leer wird "Bild (Desktop)" genommen'
+                -
+                  handle: image_desktop
+                  field:
+                    max_files: 1
+                    mode: list
+                    container: assets
+                    restrict: false
+                    allow_uploads: true
+                    show_filename: true
+                    show_set_alt: true
+                    type: assets
+                    display: 'Bild (Desktop)'
+                    icon: assets
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    hide_display: false
+                    validate:
+                      - 'mimes:jpg,jpeg,webp,png,gif'
+                    width: 50
+                    instructions: 'Wenn leer wird "Bild (Phone)" genommen'
+                -
+                  handle: alt
+                  field:
+                    input_type: text
+                    antlers: false
+                    type: text
+                    display: 'Alt Text'
+                    icon: text
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    hide_display: false
+      type: replicator
+      display: Slideshow
+      icon: replicator
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      hide_display: false
+      if:
+        hero_type: 'equals slideshow'
+      always_save: true
+  -
+    handle: disruptor_section
+    field:
+      type: section
+      display: Störer
+      icon: section
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      hide_display: false
+  -
+    handle: hero_disruptors
+    field: disruptors.disruptors
+  -
+    handle: link_button_section
+    field:
+      type: section
+      display: Link-Button
+      icon: section
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      hide_display: false
+  -
+    handle: hero_link_text
+    field:
+      input_type: text
+      antlers: false
+      type: text
+      display: Link-Text
+      icon: text
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      hide_display: false
+  -
+    handle: hero_link_type
+    field: link.link_type
+    config:
+      width: 50
+  -
+    handle: hero_linked_product
+    field: link.linked_product
+    config:
+      if:
+        hero_link_type: 'equals product'
+      width: 50
+  -
+    handle: hero_linked_page
+    field: link.linked_page
+    config:
+      if:
+        hero_link_type: 'equals page'
+      width: 50

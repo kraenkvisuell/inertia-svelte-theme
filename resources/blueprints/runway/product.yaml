@@ -1,0 +1,112 @@
+title: Product
+tabs:
+  main:
+    display: Hauptteil
+    sections:
+      -
+        fields:
+          -
+            field:
+              type: text
+              display: Title
+              width: 50
+              validate:
+                - required
+                - 'unique_entry_value:{collection},{id},{site}'
+            handle: title
+          -
+            field:
+              type: slug
+              display: Handle
+              width: 50
+              validate:
+                - required
+                - 'unique_entry_value:{collection},{id},{site}'
+            handle: slug
+          -
+            field:
+              type: translatable
+              display: 'Localized Title'
+              listable: false
+              width: 50
+              sets:
+                main:
+                  sets:
+                    main_set:
+                      fields:
+                        -
+                          field:
+                            type: text
+                            display: 'Localized Title'
+                          handle: value
+            handle: localized_title
+          -
+            field:
+              type: translatable
+              display: 'Localized Handle'
+              listable: false
+              width: 50
+              sets:
+                main:
+                  sets:
+                    main_set:
+                      fields:
+                        -
+                          field:
+                            type: text
+                            display: 'Localized Handle'
+                          handle: value
+            handle: localized_slug
+          -
+            field:
+              type: translatable
+              display: Description
+              listable: false
+              width: 50
+              sets:
+                main:
+                  sets:
+                    main_set:
+                      fields:
+                        -
+                          field:
+                            type: bard
+                            display: Description
+                            validate: {  }
+                            buttons:
+                              - h3
+                              - h4
+                              - bold
+                              - italic
+                              - unorderedlist
+                              - orderedlist
+                              - removeformat
+                              - anchor
+                              - table
+                              - horizontalrule
+                            remove_empty_nodes: trim
+                          handle: value
+            handle: description
+          -
+            field:
+              type: text
+              display: Dimensions
+              localizable: false
+              validate: {  }
+            handle: dimensions
+          -
+            field:
+              type: text
+              display: Volume
+              localizable: false
+              validate: {  }
+              width: 50
+            handle: volume
+          -
+            field:
+              type: text
+              display: Weight
+              localizable: false
+              validate: {  }
+              width: 50
+            handle: weight

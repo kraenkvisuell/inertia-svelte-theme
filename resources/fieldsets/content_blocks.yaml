@@ -1,0 +1,74 @@
+title: Inhaltsblöcke
+fields:
+  -
+    handle: blocks
+    field:
+      collapse: true
+      previews: true
+      fullscreen: false
+      sets:
+        neue_set-gruppe:
+          display: 'Neue Set-Gruppe'
+          instructions: null
+          icon: null
+          sets:
+            medium:
+              display: 'Medium (Bild/Video)'
+              instructions: null
+              icon: media-image-picture-orientation
+              fields:
+                -
+                  import: headline
+                -
+                  import: medium
+                -
+                  import: caption
+                -
+                  import: credits
+                -
+                  import: link
+            link_cards:
+              display: Link-Kästen
+              instructions: null
+              icon: addon-boxes-stack
+              fields:
+                -
+                  import: headline
+                -
+                  import: link_cards
+            text:
+              display: Text
+              instructions: null
+              icon: text-formatting-initial-letter
+              fields:
+                -
+                  handle: text
+                  field:
+                    display_mode: short
+                    sets:
+                      neue_set-gruppe:
+                        display: 'Neue Set-Gruppe'
+                        instructions: null
+                        icon: null
+                        sets:
+                          neues_set:
+                            display: 'Neues Set'
+                            instructions: null
+                            icon: null
+                            fields:
+                              -
+                                import: main_editor
+                    type: translatable
+                    display: Text
+                    icon: translatable
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    hide_display: false
+      type: replicator
+      display: Blöcke
+      icon: replicator
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      hide_display: false

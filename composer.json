@@ -1,0 +1,9 @@
+{
+    "name": "my-vendor-name/inertia-svelte-theme",
+    "extra": {
+        "statamic": {
+            "name": "Inertia Svelte Theme",
+            "description": "Inertia Svelte Theme starter kit"
+        }
+    }
+}

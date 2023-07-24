@@ -1,0 +1,64 @@
+title: Störer
+fields:
+  -
+    handle: disruptors
+    field:
+      collapse: true
+      previews: true
+      fullscreen: true
+      sets:
+        neue_set-gruppe:
+          display: 'Neue Set-Gruppe'
+          instructions: null
+          icon: null
+          sets:
+            disruptor:
+              display: Störer
+              instructions: null
+              icon: alert-alarm-bell
+              fields:
+                -
+                  handle: topline
+                  field:
+                    input_type: text
+                    antlers: false
+                    type: text
+                    display: Topline
+                    icon: text
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    hide_display: false
+                -
+                  handle: text
+                  field:
+                    antlers: false
+                    type: textarea
+                    display: Text
+                    icon: textarea
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    hide_display: false
+                -
+                  handle: bg_color
+                  field:
+                    type: shop_color
+                    display: Hintergrundfarbe
+                    icon: shop_color
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    hide_display: false
+                    replicator_preview: false
+                -
+                  import: link
+                -
+                  import: xy-position
+      type: replicator
+      display: Störer
+      icon: replicator
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      hide_display: false

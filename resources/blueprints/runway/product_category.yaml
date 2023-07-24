@@ -1,0 +1,59 @@
+title: 'Product Category'
+tabs:
+  main:
+    display: Hauptteil
+    sections:
+      -
+        fields:
+          -
+            field:
+              type: text
+              display: Title
+              width: 50
+              validate:
+                - required
+                - 'unique_entry_value:{collection},{id},{site}'
+            handle: title
+          -
+            field:
+              type: slug
+              display: Handle
+              width: 50
+              validate:
+                - required
+                - 'unique_entry_value:{collection},{id},{site}'
+            handle: slug
+          -
+            field:
+              type: translatable
+              display: 'Localized Title'
+              listable: false
+              width: 50
+              sets:
+                main:
+                  sets:
+                    main_set:
+                      fields:
+                        -
+                          field:
+                            type: text
+                            display: 'Localized Title'
+                          handle: value
+            handle: localized_title
+          -
+            field:
+              type: translatable
+              display: 'Localized Handle'
+              listable: false
+              width: 50
+              sets:
+                main:
+                  sets:
+                    main_set:
+                      fields:
+                        -
+                          field:
+                            type: slug
+                            display: 'Localized Handle'
+                          handle: value
+            handle: localized_slug

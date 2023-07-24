@@ -1,0 +1,28 @@
+title: Link-Kästen
+fields:
+  -
+    handle: cards
+    field:
+      collapse: true
+      previews: true
+      fullscreen: false
+      sets:
+        neue_set-gruppe:
+          display: 'Neue Set-Gruppe'
+          instructions: null
+          icon: null
+          sets:
+            cards:
+              display: Kasten
+              instructions: null
+              icon: null
+              fields:
+                -
+                  import: link_card
+      type: replicator
+      display: Kästen
+      icon: replicator
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      hide_display: false
