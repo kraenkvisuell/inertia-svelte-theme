@@ -35,3 +35,9 @@ export_paths:
   - storage/app/public
   - tailwind.config.js
   - vite.config.js
+dependencies:
+  inertiajs/inertia-laravel: ^0.6.9
+  kraenkvisuell/statamic-helpers: ^1.1.0
+  laravel/horizon: ^5.10
+  spatie/laravel-ray: ^1.31
+  tightenco/ziggy: ^1.5
