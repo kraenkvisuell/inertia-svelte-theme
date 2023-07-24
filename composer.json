@@ -1,5 +1,5 @@
 {
-    "name": "my-vendor-name/inertia-svelte-theme",
+    "name": "kraenkvisuell/inertia-svelte-theme",
     "extra": {
         "statamic": {
             "name": "Inertia Svelte Theme",
